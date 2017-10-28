@@ -18,7 +18,6 @@ public class MainActivity extends AppCompatActivity
   implements NavigationView.OnNavigationItemSelectedListener {
 
   private Toolbar mToolbar;
-  private FloatingActionButton mFab;
   private DrawerLayout mDraw;
   private ActionBarDrawerToggle mToogle;
   private NavigationView mNavigationView;
@@ -37,7 +36,6 @@ public class MainActivity extends AppCompatActivity
   }
 
   private void initViews() {
-    mFab = (FloatingActionButton) findViewById(R.id.fab);
     mToolbar = (Toolbar) findViewById(R.id.toolbar);
     mDraw = (DrawerLayout) findViewById(R.id.drawer_layout);
     mToogle = new ActionBarDrawerToggle(this, mDraw,
@@ -50,13 +48,6 @@ public class MainActivity extends AppCompatActivity
 
   private void initStates() {
     setSupportActionBar(mToolbar);
-    mFab.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View view) {
-        Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show();
-      }
-    });
     mDraw.setDrawerListener(mToogle);
     mToogle.syncState();
     mNavigationView.setNavigationItemSelectedListener(this);

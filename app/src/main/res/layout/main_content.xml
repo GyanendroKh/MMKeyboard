@@ -5,8 +5,15 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
+  android:background="@drawable/md_main_bg"
   app:layout_behavior="@string/appbar_scrolling_view_behavior"
   tools:context="com.gyanendrokh.meiteimayek.keyboard.activities.MainActivity"
   tools:showIn="@layout/app_bar_main">
+  
+  <include 
+    layout="@layout/developed_w_by"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_alignParentBottom="true" />
 
 </RelativeLayout>
