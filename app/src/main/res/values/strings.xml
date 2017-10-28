@@ -1,6 +1,9 @@
 <resources>
   <string name="app_name">MMKeyboard</string>
+  <string name="app_full_name">Meitei Mayek Keyboard</string>
   <string name="title_activity_main">MM Keyboard</string>
+
+  <string name="splash_welcome">Welcome to Meitei Mayek Keyboard!</string>
 
   <string name="navigation_drawer_open">Open navigation drawer</string>
   <string name="navigation_drawer_close">Close navigation drawer</string>
