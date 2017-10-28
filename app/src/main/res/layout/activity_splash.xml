@@ -37,4 +37,10 @@
       android:layout_marginTop="18dp"
       android:visibility="visible" />
 
+    <include 
+        layout="@layout/developed_w_by"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true" />
+
 </RelativeLayout>
