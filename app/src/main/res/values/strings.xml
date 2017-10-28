@@ -15,4 +15,7 @@
   <string name="sNav_about">About</string>
   <string name="sNav_openSource">Open Source</string>
   <string name="sNav_aboutMe">About Me</string>
+
+  <string name="devWithBy1">Developed with</string>
+  <string name="devWithBy2">by GyanendroKh</string>
 </resources>
