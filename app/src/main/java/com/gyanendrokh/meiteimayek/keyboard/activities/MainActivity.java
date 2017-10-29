@@ -1,9 +1,6 @@
 package com.gyanendrokh.meiteimayek.keyboard.activities;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -17,46 +14,30 @@ import com.gyanendrokh.meiteimayek.keyboard.R;
 public class MainActivity extends AppCompatActivity
   implements NavigationView.OnNavigationItemSelectedListener {
 
-  private Toolbar mToolbar;
-  private DrawerLayout mDraw;
-  private ActionBarDrawerToggle mToogle;
-  private NavigationView mNavigationView;
+  private DrawerLayout mDrawLayout;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
-    init();
-  }
+    Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+    setSupportActionBar(toolbar);
 
-  private void init() {
-    initViews();
-    initStates();
-  }
+    mDrawLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+    ActionBarDrawerToggle drawerToggle = new ActionBarDrawerToggle(this, mDrawLayout, toolbar,
+            R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+    mDrawLayout.setDrawerListener(drawerToggle);
+    drawerToggle.syncState();
 
-  private void initViews() {
-    mToolbar = (Toolbar) findViewById(R.id.toolbar);
-    mDraw = (DrawerLayout) findViewById(R.id.drawer_layout);
-    mToogle = new ActionBarDrawerToggle(this, mDraw,
-      mToolbar,
-      R.string.navigation_drawer_open,
-      R.string.navigation_drawer_close
-    );
-    mNavigationView = (NavigationView) findViewById(R.id.nav_view);
-  }
-
-  private void initStates() {
-    setSupportActionBar(mToolbar);
-    mDraw.setDrawerListener(mToogle);
-    mToogle.syncState();
-    mNavigationView.setNavigationItemSelectedListener(this);
+    NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+    navigationView.setNavigationItemSelectedListener(this);
   }
 
   @Override
   public void onBackPressed() {
-    if (mDraw.isDrawerOpen(GravityCompat.START)) {
-      mDraw.closeDrawer(GravityCompat.START);
+    if (mDrawLayout.isDrawerOpen(GravityCompat.START)) {
+      mDrawLayout.closeDrawer(GravityCompat.START);
     } else {
       super.onBackPressed();
     }
@@ -64,7 +45,7 @@ public class MainActivity extends AppCompatActivity
 
   @Override
   public boolean onNavigationItemSelected(MenuItem item) {
-    mDraw.closeDrawer(GravityCompat.START);
+    mDrawLayout.closeDrawer(GravityCompat.START);
     return true;
   }
 }
