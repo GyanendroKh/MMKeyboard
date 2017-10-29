@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keyboard
+  android:keyWidth="@fraction/keyW"
+  android:keyHeight="@fraction/keyHi"
+  android:horizontalGap="@fraction/keyH"
+  android:verticalGap="@fraction/keyV"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+  <Row>
+    <Key android:codes="0x0000ABF1" android:keyEdgeFlags="left" android:keyLabel="꯱" android:horizontalGap="0%p" />
+    <Key android:codes="0x0000ABF2" android:keyLabel="꯲" />
+    <Key android:codes="0x0000ABF3" android:keyLabel="꯳" />
+    <Key android:codes="0x0000ABF4" android:keyLabel="꯴" />
+    <Key android:codes="0x0000ABF5" android:keyLabel="꯵" />
+    <Key android:codes="0x0000ABF6" android:keyLabel="꯶" />
+    <Key android:codes="0x0000ABF7" android:keyLabel="꯷" />
+    <Key android:codes="0x0000ABF8" android:keyLabel="꯸" />
+    <Key android:codes="0x0000ABF9" android:keyLabel="꯹" />
+    <Key android:codes="0x0000ABF0" android:keyEdgeFlags="right" android:keyLabel="꯰" />
+  </Row>
+  <Row>
+    <Key android:horizontalGap="4.824%p" android:codes="0x0000ABE3" android:keyEdgeFlags="left" android:keyLabel="ꯣ" />
+    <Key android:codes="0x0000ABE4" android:keyLabel="ꯤ" />
+    <Key android:codes="0x0000ABE5" android:keyLabel="ꯥ" />
+    <Key android:codes="0x0000ABE6" android:keyLabel="ꯦ" />
+    <Key android:codes="0x0000ABE7" android:keyLabel="ꯧ" />
+    <Key android:codes="0x0000ABE8" android:keyLabel="ꯨ" />
+    <Key android:codes="0x0000ABE9" android:keyLabel="ꯩ" />
+    <Key android:codes="0x0000ABEA" android:keyLabel="ꯪ" />
+    <Key android:codes="0x0000ABEC" android:keyEdgeFlags="right" android:keyLabel="꯬" />
+  </Row>
+  <Row>
+    <Key android:horizontalGap="4.824%p" android:codes="0x0000ABED" android:keyEdgeFlags="left" android:keyLabel="꯭" />
+    <Key android:codes="38" android:keyLabel="&amp;" />
+    <Key android:codes="46" android:keyLabel="." />
+    <Key android:codes="58" android:keyLabel=":" />
+    <Key android:codes="63" android:keyLabel="\?" />
+    <Key android:codes="47" android:keyLabel="/" />
+    <Key android:codes="45" android:keyLabel="-" />
+    <Key android:codes="61" android:keyLabel="=" />
+    <Key android:codes="43" android:keyEdgeFlags="right" android:keyLabel="+" />
+  </Row>
+  <Row>
+    <Key android:keyWidth="14.582%p" android:codes="-2" android:keyEdgeFlags="left" android:isModifier="true" android:keyLabel="\uABC0 \uABC1 \uABC2" android:horizontalGap="0%p" />
+    <Key android:codes="34" android:keyLabel="&quot;" />
+    <Key android:codes="33" android:keyLabel="!" />
+    <Key android:codes="64" android:keyLabel="\@" />
+    <Key android:codes="35" android:keyLabel="\#" />
+    <Key android:codes="42" android:keyLabel="*" />
+    <Key android:codes="40" android:keyLabel="(" />
+    <Key android:codes="41" android:keyLabel=")" />
+    <Key android:keyWidth="14.582%p" android:codes="-5" android:keyEdgeFlags="right" android:isRepeatable="true" android:keyIcon="@drawable/ic_backspace_black" />
+  </Row>
+  <Row android:rowEdgeFlags="bottom">
+    <Key android:keyWidth="15.585%p" android:codes="-101" android:keyEdgeFlags="left" android:keyIcon="@drawable/ic_language_black" android:horizontalGap="0%p" />
+    <Key android:keyWidth="14.145%p" android:codes="0x0000ABED" android:keyLabel="꯭" />
+    <Key android:keyWidth="36.94%p" android:codes="32" android:isRepeatable="true" android:keyLabel="The Project Mystic" />
+    <Key android:keyWidth="14.145%p" android:codes="0x0000ABEB" android:keyLabel="꯫" />
+    <Key android:keyWidth="15.585%p" android:codes="10" android:keyEdgeFlags="right" android:keyIcon="@drawable/ic_keyboard_return_black" />
+  </Row>
+</Keyboard>

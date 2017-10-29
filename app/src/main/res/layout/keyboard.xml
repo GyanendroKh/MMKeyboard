@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.gyanendrokh.meiteimayek.keyboard.views.MMKeyboardView
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:popupLayout="@null"
+  android:keyPreviewLayout="@null"
+  android:keyBackground="@drawable/key_background"
+  android:background="@color/keyBack" >
+</com.gyanendrokh.meiteimayek.keyboard.views.MMKeyboardView>

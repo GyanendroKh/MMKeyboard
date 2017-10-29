@@ -24,6 +24,19 @@
       android:name=".activities.MainActivity"
       android:label="@string/title_activity_main"
       android:theme="@style/AppTheme.NoActionBar" />
+
+    <service
+      android:name=".keyboard.MMKeyboardService"
+      android:label="Meitei Mayek Keyboard"
+      android:permission="android.permission.BIND_INPUT_METHOD">
+      <intent-filter>
+        <action android:name="android.view.InputMethod" />
+      </intent-filter>
+
+      <meta-data
+        android:name="android.view.im"
+        android:resource="@xml/method" />
+    </service>
   </application>
 
 </manifest>

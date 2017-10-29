@@ -5,4 +5,8 @@
   <color name="colorAccent">#FF4081</color>
 
   <color name="transparent">#00ffffff</color>
+
+  <color name="keyText">#eeeeee</color>
+  <color name="keyBack">#263238</color>
+  <color name="keyPress">#424242</color>
 </resources>
