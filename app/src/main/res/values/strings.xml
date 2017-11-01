@@ -1,5 +1,5 @@
 <resources>
-  <string name="app_name">MMKeyboard</string>
+  <string name="app_name">MM Keyboard</string>
   <string name="app_full_name">Meitei Mayek Keyboard</string>
   <string name="title_activity_main">MM Keyboard</string>
 
@@ -18,4 +18,8 @@
 
   <string name="devWithBy1">Developed with</string>
   <string name="devWithBy2">by GyanendroKh</string>
+
+  <string name="home_not_setup">The keyboard has not been properly setup.</string>
+  <string name="home_text_1">This is just a simple Keyboard.\nThis keyboard may not work properly for some devices. The MeiteiMayek fonts may not appear or appear as boxes or blank.</string>
+  <string name="home_text_try">Try out the keyboard here.</string>
 </resources>
