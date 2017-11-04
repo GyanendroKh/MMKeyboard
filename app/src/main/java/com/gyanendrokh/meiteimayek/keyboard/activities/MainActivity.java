@@ -14,6 +14,7 @@ import android.support.v4.app.FragmentManager;
 
 import com.gyanendrokh.meiteimayek.keyboard.R;
 import com.gyanendrokh.meiteimayek.keyboard.fragments.HomeFragment;
+import com.gyanendrokh.meiteimayek.keyboard.fragments.AboutMeFragment;
 
 public class MainActivity extends AppCompatActivity
   implements NavigationView.OnNavigationItemSelectedListener {
@@ -75,6 +76,7 @@ public class MainActivity extends AppCompatActivity
 
     switch(item.getItemId()) {
       case R.id.sNav_aboutMe:
+        renderFragment(AboutMeFragment.getInstance());
         break;
     }
 
