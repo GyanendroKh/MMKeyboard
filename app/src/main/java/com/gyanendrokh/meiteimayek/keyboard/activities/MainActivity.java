@@ -1,6 +1,5 @@
 package com.gyanendrokh.meiteimayek.keyboard.activities;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -9,14 +8,14 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
-import android.text.Layout;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
+import android.graphics.Color;
 
 import com.gyanendrokh.meiteimayek.keyboard.R;
 import com.gyanendrokh.meiteimayek.keyboard.views.HomeNotSetupView;
+import com.gyanendrokh.meiteimayek.keyboard.views.BottomDevelopBy;
 
 public class MainActivity extends AppCompatActivity
   implements NavigationView.OnNavigationItemSelectedListener {
@@ -25,6 +24,7 @@ public class MainActivity extends AppCompatActivity
   private DrawerLayout mDrawLayout;
   private NavigationView mNavView;
 
+  private RelativeLayout mMainLayout;
   private RelativeLayout mMainContent;
   private CardView mCardNotSetUp;
 
@@ -45,12 +45,14 @@ public class MainActivity extends AppCompatActivity
     mNavView = (NavigationView) findViewById(R.id.nav_view);
     mNavView.setNavigationItemSelectedListener(this);
 
-    setBottomDevelopBy();
+    mMainLayout = (RelativeLayout) findViewById(R.id.main_layout);
+    mMainContent = (RelativeLayout) findViewById(R.id.main_content);
+
     addCardNotSetUp();
+    setBottomDevelopBy();
   }
 
   private void addCardNotSetUp() {
-    mMainContent = (RelativeLayout) findViewById(R.id.main_content);
     RelativeLayout.LayoutParams cardNotSetUpLParams = new RelativeLayout.LayoutParams(
       RelativeLayout.LayoutParams.MATCH_PARENT,
       RelativeLayout.LayoutParams.WRAP_CONTENT);
@@ -58,7 +60,6 @@ public class MainActivity extends AppCompatActivity
     mCardNotSetUp = HomeNotSetupView.getCardView(this);
     mMainContent.addView(mCardNotSetUp, cardNotSetUpLParams);
   }
-
 
   private void removeCardNotSetUp() {
     if(mCardNotSetUp == null) return;
@@ -81,10 +82,10 @@ public class MainActivity extends AppCompatActivity
   }
 
   private void setBottomDevelopBy() {
-    TextView t1 = (TextView)findViewById(R.id.developed_w_by_1);
-    TextView t2 = (TextView)findViewById(R.id.developed_w_by_2);
-    t1.setTextColor(Color.BLACK);
-    t2.setTextColor(Color.BLACK);
+    BottomDevelopBy bdy = new BottomDevelopBy(this);
+    bdy.setTextColor(Color.BLACK);
+
+    mMainLayout.addView(bdy.getView(), bdy.getParams());
   }
 
 }
