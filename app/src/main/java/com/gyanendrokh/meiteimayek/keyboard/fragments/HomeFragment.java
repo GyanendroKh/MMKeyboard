@@ -57,7 +57,7 @@ public class HomeFragment extends Fragment {
 
   private void addBottomDevelopBy() {
     BottomDevelopBy bdy = new BottomDevelopBy(getActivity());
-    bdy.setTextColor(Color.BLACK);
+    bdy.setTextColor(Color.WHITE);
 
     mMainLayout.addView(bdy.getView(), bdy.getParams());
   }
