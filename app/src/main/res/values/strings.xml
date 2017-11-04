@@ -33,4 +33,7 @@
   <string name="dev_con_fb">Facebook</string>
   <string name="dev_con_gmail">Gmail</string>
   <string name="dev_con_github">Github</string>
+
+  <string name="open_source_text">This application is an OpenSource Application.\nThe Source Code for this application is hosted on Github. Anyone who wish to contribute can send a pull request. Let\'s develop this application together, help me make it better.</string>
+  <string name="link_to_github">Link to Github</string>
 </resources>
