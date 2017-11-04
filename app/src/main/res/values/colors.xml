@@ -9,4 +9,8 @@
   <color name="keyText">#eeeeee</color>
   <color name="keyBack">#263238</color>
   <color name="keyPress">#424242</color>
+  
+  <color name="btn_bck">#2196f3</color>
+
+  <color name="about_title">#536dfe</color>
 </resources>

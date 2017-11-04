@@ -9,4 +9,10 @@
   <fraction name="keyHi">7.2%</fraction>
   <fraction name="keyH">0.9%</fraction>
   <fraction name="keyV">1.2%</fraction>
+
+  <dimen name="card_dimens">5dp</dimen>
+  <dimen name="card_rel_margin">10dp</dimen>
+
+
+  <dimen name="about_btn_margin">5dp</dimen>
 </resources>

@@ -7,27 +7,25 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.RelativeLayout;
-import android.graphics.Color;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 
 import com.gyanendrokh.meiteimayek.keyboard.R;
-import com.gyanendrokh.meiteimayek.keyboard.views.HomeNotSetupView;
-import com.gyanendrokh.meiteimayek.keyboard.views.BottomDevelopBy;
+import com.gyanendrokh.meiteimayek.keyboard.fragments.HomeFragment;
 
 public class MainActivity extends AppCompatActivity
   implements NavigationView.OnNavigationItemSelectedListener {
 
+  private static final int FRAGMENT_CONTAINER = R.id.main_view;
+
   private Toolbar mToolbar;
   private DrawerLayout mDrawLayout;
   private NavigationView mNavView;
+  private HomeFragment mHomeFragment;
 
-  private RelativeLayout mMainLayout;
-  private RelativeLayout mMainContent;
-  private CardView mCardNotSetUp;
+  private FragmentManager mFragmentManager;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -46,25 +44,21 @@ public class MainActivity extends AppCompatActivity
     mNavView = (NavigationView) findViewById(R.id.nav_view);
     mNavView.setNavigationItemSelectedListener(this);
 
-    mMainLayout = (RelativeLayout) findViewById(R.id.main_layout);
-    mMainContent = (RelativeLayout) findViewById(R.id.main_content);
+    mFragmentManager = getSupportFragmentManager();
+    mHomeFragment = HomeFragment.getInstance();
 
-    addCardNotSetUp();
-    setBottomDevelopBy();
+    showHomeFragment();
   }
 
-  private void addCardNotSetUp() {
-    RelativeLayout.LayoutParams cardNotSetUpLParams = new RelativeLayout.LayoutParams(
-      RelativeLayout.LayoutParams.MATCH_PARENT,
-      RelativeLayout.LayoutParams.WRAP_CONTENT);
-    cardNotSetUpLParams.setMargins(5, 0, 5, 0);
-    mCardNotSetUp = HomeNotSetupView.getCardView(this);
-    mMainContent.addView(mCardNotSetUp, cardNotSetUpLParams);
+  private void renderFragment(Fragment fragment) {
+    Fragment curFragment = mFragmentManager.findFragmentById(FRAGMENT_CONTAINER);
+
+    if(curFragment == fragment) return;
+    mFragmentManager.beginTransaction().replace(FRAGMENT_CONTAINER, fragment).commit();
   }
 
-  private void removeCardNotSetUp() {
-    if(mCardNotSetUp == null) return;
-    mCardNotSetUp.setVisibility(View.GONE);
+  private void showHomeFragment() {
+    renderFragment(mHomeFragment);
   }
 
   @Override
@@ -78,15 +72,14 @@ public class MainActivity extends AppCompatActivity
 
   @Override
   public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+    switch(item.getItemId()) {
+      case R.id.sNav_aboutMe:
+        break;
+    }
+
     mDrawLayout.closeDrawer(GravityCompat.START);
     return true;
-  }
-
-  private void setBottomDevelopBy() {
-    BottomDevelopBy bdy = new BottomDevelopBy(this);
-    bdy.setTextColor(Color.BLACK);
-
-    mMainLayout.addView(bdy.getView(), bdy.getParams());
   }
 
 }

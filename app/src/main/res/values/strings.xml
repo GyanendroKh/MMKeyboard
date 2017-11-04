@@ -1,14 +1,13 @@
 <resources>
   <string name="app_name">MM Keyboard</string>
-  <string name="app_full_name">Meitei Mayek Keyboard</string>
   <string name="title_activity_main">MM Keyboard</string>
+  <string name="title_about_me">About Me</string>
 
   <string name="splash_welcome">Welcome to Meitei Mayek Keyboard!</string>
 
   <string name="navigation_drawer_open">Open navigation drawer</string>
   <string name="navigation_drawer_close">Close navigation drawer</string>
 
-  <string name="action_settings">Settings</string>
   <string name="sNav_home">Home</string>
   <string name="sNav_settings">Settings</string>
   <string name="sNav_share">Share</string>
@@ -21,6 +20,18 @@
   <string name="devWithBy2">by GyanendroKh</string>
 
   <string name="home_not_setup">The keyboard has not been properly setup.</string>
-  <string name="home_text_1">This is just a simple Keyboard.\nThis keyboard may not work properly for some devices. The MeiteiMayek fonts may not appear or appear as boxes or blank.</string>
-  <string name="home_text_try">Try out the keyboard here.</string>
+
+  <string name="about">This is a simple keyboard for Meitei Mayek.\nThis is a part of a larger project (currently under development). A project which tends to develop some advanced apps like English-to-Manipuri translator, Manipuri Dictionary, etc.</string>
+  <string name="about_compat_body">This keyboard may not work on some older devices. Old version of Android (usually 4.4 and below) doesn\'t support the Meitei Mayek Font by default but most of the newer devices does except for some.\nBy \"not work\" means that Meitei Mayek Font may not be rendered when you type but it will still render it perfectly on the keyboard itself and this application.\nIf you have an older version device and the font doesn\'t render at all, you can install the font directly on your device.</string>
+  <string name="about_developer">I (Gyanendro Kh) developed this app just for fun.\nIf any complaint or feedback, feel free to contact me.</string>
+
+  <string name="version">v0.2.1</string>
+  <string name="about_me_title">About Me</string>
+  <string name="about_compat_title">Compatibility</string>
+  <string name="about_dev_title">Developer</string>
+  <string name="dev_con_fb">Facebook</string>
+  <string name="dev_con_gmail">Gmail</string>
+  <string name="dev_con_github">Github</string>
+  <string name="click_here_to_setup">Click Here to SetUp</string>
+
 </resources>
