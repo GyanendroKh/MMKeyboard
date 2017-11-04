@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity
     mFragmentManager = getSupportFragmentManager();
     mHomeFragment = HomeFragment.getInstance();
 
-    showHomeFragment();
+    renderFragment(HomeFragment.getInstance());
   }
 
   private void renderFragment(Fragment fragment) {
@@ -57,10 +57,6 @@ public class MainActivity extends AppCompatActivity
 
     if(curFragment == fragment) return;
     mFragmentManager.beginTransaction().replace(FRAGMENT_CONTAINER, fragment).commit();
-  }
-
-  private void showHomeFragment() {
-    renderFragment(mHomeFragment);
   }
 
   @Override
@@ -76,6 +72,9 @@ public class MainActivity extends AppCompatActivity
   public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
     switch(item.getItemId()) {
+      case R.id.sNav_home:
+        renderFragment(HomeFragment.getInstance());
+        break;
       case R.id.sNav_aboutMe:
         renderFragment(AboutMeFragment.getInstance());
         break;
