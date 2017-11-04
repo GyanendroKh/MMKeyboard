@@ -9,9 +9,9 @@ import com.gyanendrokh.meiteimayek.keyboard.R;
 
 public class HomeNotSetupView {
 
-  private Context mContext;
+  private final Context mContext;
   private CardView mCardView;
-  private LayoutInflater mInflater;
+  private final LayoutInflater mInflater;
 
   private HomeNotSetupView(Context context) {
     mContext = context;

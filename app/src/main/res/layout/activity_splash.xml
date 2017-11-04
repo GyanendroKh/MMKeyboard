@@ -28,7 +28,6 @@
       android:textSize="18sp" />
 
     <ProgressBar
-      android:id="@+id/splashLoad"
       style="?android:attr/progressBarStyle"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"

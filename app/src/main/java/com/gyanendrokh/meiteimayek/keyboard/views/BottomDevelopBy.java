@@ -11,9 +11,9 @@ import com.gyanendrokh.meiteimayek.keyboard.R;
 
 public class BottomDevelopBy {
 
-  private Context mContext;
-  private View mRootView;
-  private RelativeLayout mMainContent;
+  private final Context mContext;
+  private final View mRootView;
+  private final RelativeLayout mMainContent;
   private RelativeLayout.LayoutParams mParams;
   private TextView mText1, mText2;
 
@@ -41,7 +41,7 @@ public class BottomDevelopBy {
     mText2.setTextColor(color);
   }
 
-  public void setParams() {
+  private void setParams() {
     mParams = new RelativeLayout.LayoutParams(
       RelativeLayout.LayoutParams.MATCH_PARENT,
       RelativeLayout.LayoutParams.WRAP_CONTENT
