@@ -19,7 +19,9 @@
   <string name="love">Love</string>
   <string name="devWithBy2">by GyanendroKh</string>
 
-  <string name="home_not_setup">The keyboard has not been properly setup.</string>
+  <string name="home_try_title">Try out the Keyboard here...</string>
+
+  <string name="home_not_setup">The Keyboard is not properly setup.</string>
   <string name="click_here_to_setup">Click Here to SetUp</string>
 
   <string name="about">This is a simple keyboard for Meitei Mayek.\nThis project is an OpenSource Project developed just to teach others and to help in the development of our Meitei Culture on the way of Technology.</string>
