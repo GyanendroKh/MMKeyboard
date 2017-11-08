@@ -19,7 +19,7 @@
   <string name="love">Love</string>
   <string name="devWithBy2">by GyanendroKh</string>
 
-  <string name="home_try_title">Try out the Keyboard here...</string>
+  <string name="home_try_title">Try out the Keyboard here…</string>
 
   <string name="home_not_setup">The Keyboard is not properly setup.</string>
   <string name="click_here_to_setup">Click Here to SetUp</string>
@@ -38,4 +38,16 @@
 
   <string name="open_source_text">This application is an OpenSource Application.\nThe Source Code for this application is hosted on Github. Anyone who wish to contribute can send a pull request. Let\'s develop this application together, help me make it better.</string>
   <string name="link_to_github">Link to Github</string>
+
+  <string name="placeholder">Lorem Ipsum</string>
+  <string name="setup_state_skipped">Seems like you skipped the previous step.</string>
+  <string name="setup_state_select_title">Select the Keyboard</string>
+  <string name="setup_state_select_content">Select to keyboard by clicking the button below.\nA popup dialog box will appear, Click OK in it.</string>
+  <string name="setup_state_select_btn_text">Click to Select</string>
+  <string name="setup_state_default_title">Make it Default</string>
+  <string name="setup_state_default_content">To start using the keyboard you need to set \"MM Keyboard\" as your default keyboard.\nClick the Button Below and Select MM Keyboard from the pop up list.</string>
+  <string name="setup_state_default_btn_text">Click to make default</string>
+  <string name="setup_state_ready_title">All Ready!!!</string>
+  <string name="setup_state_ready_content">Keyboard is all set up.\nYou can now start typing in Meitei Mayek Script</string>
+  <string name="setup_state_ready_btn_text">Start Typing</string>
 </resources>

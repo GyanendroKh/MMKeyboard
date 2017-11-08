@@ -13,4 +13,8 @@
   <color name="btn_bck">#2196f3</color>
 
   <color name="about_title">#536dfe</color>
+
+  <color name="setup_state_ready">#455a64</color>
+  <color name="setup_state_default">#ef5350</color>
+  <color name="setup_state_enable">#4fc3f7</color>
 </resources>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:id="@+id/fragmentContainer"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical">
+
+  <ImageView
+    android:id="@+id/stepImage"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginBottom="16dp"
+    android:adjustViewBounds="true"/>
+
+  <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_above="@+id/stepActionBtn"
+    android:layout_below="@+id/stepImage">
+
+    <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+
+      <TextView
+        android:id="@+id/stepTitle"
+        style="@style/TextAppearance.AppCompat.Headline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:paddingEnd="16dp"
+        android:paddingStart="16dp"
+        android:text="@string/placeholder"
+        android:textColor="#FFF"/>
+
+      <TextView
+        android:id="@+id/stepContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/stepTitle"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:paddingEnd="32dp"
+        android:paddingStart="32dp"
+        android:text="@string/placeholder"
+        android:textColor="#FFF"
+        android:textSize="14sp"/>
+
+    </RelativeLayout>
+  </ScrollView>
+
+  <Button
+    android:id="@+id/stepActionBtn"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:background="#29151515"
+    android:textColor="#fff"
+    android:text="@string/placeholder"
+    android:layout_margin="8dp" />
+
+</RelativeLayout>
