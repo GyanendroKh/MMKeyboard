@@ -24,7 +24,7 @@ public class SetupActivity extends StepPagerActivity {
       addFragment(new Step.Builder()
         .setTitle(getString(R.string.setup_state_select_title))
         .setContent(getString(R.string.setup_state_select_content))
-        .setBackgroundColor(getResources().getColor(R.color.setup_state_enable))
+        .setBackgroundColor(R.color.setup_state_enable)
         .setImage(R.drawable.state_select)
         .setActionBtn(getString(R.string.setup_state_select_btn_text), IMEUtils.STATE_NOT_ENABLED).build());
     }
@@ -32,14 +32,14 @@ public class SetupActivity extends StepPagerActivity {
       addFragment(new Step.Builder()
         .setTitle(getString(R.string.setup_state_default_title))
         .setContent(getString(R.string.setup_state_default_content))
-        .setBackgroundColor(getResources().getColor(R.color.setup_state_default))
+        .setBackgroundColor(R.color.setup_state_default)
         .setImage(R.drawable.state_make_default)
         .setActionBtn(getString(R.string.setup_state_default_btn_text), IMEUtils.STATE_NOT_DEFAULT).build());
     }
     addFragment(new Step.Builder()
       .setTitle(getString(R.string.setup_state_ready_title))
       .setContent(getString(R.string.setup_state_ready_content))
-      .setBackgroundColor(getResources().getColor(R.color.setup_state_ready))
+      .setBackgroundColor(R.color.setup_state_ready)
       .setImage(R.drawable.state_ready)
       .setActionBtn(getString(R.string.setup_state_ready_btn_text), IMEUtils.STATE_READY).build());
   }

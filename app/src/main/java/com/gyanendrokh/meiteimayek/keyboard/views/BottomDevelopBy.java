@@ -1,11 +1,11 @@
 package com.gyanendrokh.meiteimayek.keyboard.views;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.View;
 import android.view.LayoutInflater;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.graphics.Color;
 
 import com.gyanendrokh.meiteimayek.keyboard.R;
 
@@ -25,6 +25,7 @@ public class BottomDevelopBy {
     setParams();
   }
 
+  @SuppressLint("InflateParams")
   private View getLayoutFromXML() {
     LayoutInflater lInflater = (LayoutInflater) mContext.getSystemService(
       Context.LAYOUT_INFLATER_SERVICE);

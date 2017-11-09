@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.LayoutInflater;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 import android.widget.RelativeLayout.LayoutParams;
 import android.support.v7.widget.CardView;
 import android.graphics.Color;
@@ -19,7 +18,6 @@ import com.gyanendrokh.meiteimayek.keyboard.R;
 import com.gyanendrokh.meiteimayek.keyboard.views.HomeNotSetupView;
 import com.gyanendrokh.meiteimayek.keyboard.views.BottomDevelopBy;
 import com.gyanendrokh.meiteimayek.keyboard.utils.IMEUtils;
-import com.gyanendrokh.meiteimayek.keyboard.activities.MainActivity;
 
 public class HomeFragment extends Fragment {
 

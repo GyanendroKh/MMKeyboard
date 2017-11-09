@@ -10,20 +10,20 @@ import com.gyanendrokh.meiteimayek.keyboard.commons.Step;
 import com.gyanendrokh.meiteimayek.keyboard.fragments.StepFragment;
 
 public class StepPagerAdapter extends FragmentPagerAdapter {
-    private List<Step> stepList;
+    private List<Step> mSteps;
 
     public StepPagerAdapter(FragmentManager fm, List<Step> stepList) {
         super(fm);
-        this.stepList = stepList;
+        this.mSteps = stepList;
     }
 
     @Override
     public Fragment getItem(int position) {
-        return StepFragment.createFragment(stepList.get(position));
+        return StepFragment.createFragment(mSteps.get(position));
     }
 
     @Override
     public int getCount() {
-        return stepList.size();
+        return mSteps.size();
     }
 }

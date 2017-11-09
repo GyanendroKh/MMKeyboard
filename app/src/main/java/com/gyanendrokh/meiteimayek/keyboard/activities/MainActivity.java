@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity
   private Toolbar mToolbar;
   private DrawerLayout mDrawLayout;
   private NavigationView mNavView;
-  private HomeFragment mHomeFragment;
 
   private FragmentManager mFragmentManager;
 
@@ -48,7 +47,6 @@ public class MainActivity extends AppCompatActivity
     mNavView.setNavigationItemSelectedListener(this);
 
     mFragmentManager = getSupportFragmentManager();
-    mHomeFragment = HomeFragment.getInstance();
 
     renderFragment(HomeFragment.getInstance());
 

@@ -1,5 +1,6 @@
 package com.gyanendrokh.meiteimayek.keyboard.keyboard;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.os.IBinder;
 import android.inputmethodservice.InputMethodService;
@@ -35,6 +36,7 @@ public class MMKeyboardService extends InputMethodService implements KeyboardVie
     mMMSymbolKeyboard = new MMKeyboard(this, R.xml.mmkeyboard_symbols);
   }
 
+  @SuppressLint("InflateParams")
   @Override
   public View onCreateInputView() {
     mKeyView = (MMKeyboardView) getLayoutInflater().inflate(R.layout.keyboard, null);

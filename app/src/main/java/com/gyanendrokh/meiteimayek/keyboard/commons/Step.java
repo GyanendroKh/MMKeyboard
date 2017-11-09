@@ -91,9 +91,9 @@ public class Step implements Parcelable {
     dest.writeInt(this.mBtnAction);
   }
 
-  public Step() {}
+  private Step() {}
 
-  protected Step(Parcel in) {
+  private Step(Parcel in) {
     this.mBackgroundColor = in.readInt();
     this.mImage = in.readInt();
     this.mTitle = in.readString();

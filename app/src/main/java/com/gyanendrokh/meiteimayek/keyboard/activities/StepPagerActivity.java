@@ -1,5 +1,6 @@
 package com.gyanendrokh.meiteimayek.keyboard.activities;
 
+import android.annotation.SuppressLint;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -23,28 +24,29 @@ import com.gyanendrokh.meiteimayek.keyboard.adapters.StepPagerAdapter;
 import com.gyanendrokh.meiteimayek.keyboard.commons.Step;
 import com.gyanendrokh.meiteimayek.keyboard.utils.IMEUtils;
 
+@SuppressLint("Registered")
 public class StepPagerActivity extends AppCompatActivity
         implements View.OnClickListener {
 
-  private List<Step> steps;
-  private StepPagerAdapter adapter;
+  private List<Step> mSteps;
+  private StepPagerAdapter mPagerAdapter;
 
   private RelativeLayout mContainerLayout;
-  private ViewPager pager;
-  private Button next, prev;
-  private LinearLayout indicatorLayout;
-  private RelativeLayout buttonContainer;
+  private ViewPager mPagerView;
+  private Button mBtnNext, mBtnPrev;
+  private LinearLayout mIndicatorLayout;
+  private RelativeLayout mButtonContainer;
 
-  private int currentItem;
+  private int mCurrentItemPos;
   private IMEUtils mImeUtils;
-  private String prevText, nextText, finishText, cancelText, skipText;
+  private String mPrevText, mNextText, mFinishText, mCancelText, mSkipText;
 
   @Override
   protected void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setTheme(android.support.v7.appcompat.R.style.Theme_AppCompat_Light_NoActionBar);
     setContentView(R.layout.activity_tutorial);
-    steps = new ArrayList<>();
+    mSteps = new ArrayList<>();
     mImeUtils = new IMEUtils(this);
     initTexts();
     initViews();
@@ -53,23 +55,23 @@ public class StepPagerActivity extends AppCompatActivity
   }
 
   private void initTexts() {
-    prevText = "Back";
-    cancelText = "Cancel";
-    finishText = "Finish";
-    nextText = "Next";
-    skipText = "Skip";
+    mPrevText = "Back";
+    mCancelText = "Cancel";
+    mFinishText = "Finish";
+    mNextText = "Next";
+    mSkipText = "Skip";
   }
 
   private void initAdapter() {
-    adapter = new StepPagerAdapter(getSupportFragmentManager(), steps);
-    pager.setAdapter(adapter);
-    pager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+    mPagerAdapter = new StepPagerAdapter(getSupportFragmentManager(), mSteps);
+    mPagerView.setAdapter(mPagerAdapter);
+    mPagerView.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
       @Override
       public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
 
       @Override
       public void onPageSelected(int position) {
-        currentItem = position;
+        mCurrentItemPos = position;
         controlPosition(position);
       }
 
@@ -80,53 +82,53 @@ public class StepPagerActivity extends AppCompatActivity
 
   private void controlPosition(int position) {
     notifyIndicator();
-    if (position == steps.size() - 1) {
-      next.setText(finishText);
-      prev.setText(prevText);
+    if (position == mSteps.size() - 1) {
+      mBtnNext.setText(mFinishText);
+      mBtnPrev.setText(mPrevText);
     } else if (position == 0) {
-      prev.setText(cancelText);
-      if(steps.get(position).getBtnAction() == mImeUtils.getState()) next.setText(skipText);
-      else next.setText(nextText);
+      mBtnPrev.setText(mCancelText);
+      if(mSteps.get(position).getBtnAction() == mImeUtils.getState()) mBtnNext.setText(mSkipText);
+      else mBtnNext.setText(mNextText);
     } else {
-      prev.setText(prevText);
-      if(steps.get(position).getBtnAction() == mImeUtils.getState()) next.setText(skipText);
-      else next.setText(nextText);
+      mBtnPrev.setText(mPrevText);
+      if(mSteps.get(position).getBtnAction() == mImeUtils.getState()) mBtnNext.setText(mSkipText);
+      else mBtnNext.setText(mNextText);
     }
 
-    mContainerLayout.setBackgroundColor(steps.get(position).getBackgroundColor());
-    buttonContainer.setBackgroundColor(steps.get(position).getBackgroundColor());
+    mContainerLayout.setBackgroundColor(mSteps.get(position).getBackgroundColor());
+    mButtonContainer.setBackgroundColor(mSteps.get(position).getBackgroundColor());
   }
 
   private void initViews() {
-    currentItem = 0;
+    mCurrentItemPos = 0;
 
-    pager = (ViewPager) findViewById(R.id.viewPager);
-    next = (Button) findViewById(R.id.btnNext);
-    prev = (Button) findViewById(R.id.btnPrev);
-    indicatorLayout = (LinearLayout) findViewById(R.id.indicatorLayout);
+    mPagerView = (ViewPager) findViewById(R.id.viewPager);
+    mBtnNext = (Button) findViewById(R.id.btnNext);
+    mBtnPrev = (Button) findViewById(R.id.btnPrev);
+    mIndicatorLayout = (LinearLayout) findViewById(R.id.indicatorLayout);
     mContainerLayout = (RelativeLayout) findViewById(R.id.containerLayout);
-    buttonContainer = (RelativeLayout) findViewById(R.id.buttonContainer);
+    mButtonContainer = (RelativeLayout) findViewById(R.id.buttonContainer);
 
-    next.setOnClickListener(this);
-    prev.setOnClickListener(this);
+    mBtnNext.setOnClickListener(this);
+    mBtnPrev.setOnClickListener(this);
   }
 
   public void addFragment(Step step) {
-    steps.add(step);
-    adapter.notifyDataSetChanged();
+    mSteps.add(step);
+    mPagerAdapter.notifyDataSetChanged();
     notifyIndicator();
-    controlPosition(currentItem);
+    controlPosition(mCurrentItemPos);
   }
 
   public void notifyIndicator() {
-    if (indicatorLayout.getChildCount() > 0)
-      indicatorLayout.removeAllViews();
+    if (mIndicatorLayout.getChildCount() > 0)
+      mIndicatorLayout.removeAllViews();
 
-    for (int i = 0; i < steps.size(); i++) {
+    for (int i = 0; i < mSteps.size(); i++) {
       ImageView imageView = new ImageView(this);
       imageView.setPadding(8, 8, 8, 8);
       int drawable = R.drawable.circle_black;
-      if (i == currentItem)
+      if (i == mCurrentItemPos)
         drawable = R.drawable.circle_white;
 
       imageView.setImageResource(drawable);
@@ -139,14 +141,14 @@ public class StepPagerActivity extends AppCompatActivity
         }
       });
 
-      indicatorLayout.addView(imageView);
+      mIndicatorLayout.addView(imageView);
     }
 
   }
 
   @Override
   public void onBackPressed() {
-    if (currentItem == 0) {
+    if (mCurrentItemPos == 0) {
       super.onBackPressed();
     } else {
       changeFragment(false);
@@ -156,7 +158,7 @@ public class StepPagerActivity extends AppCompatActivity
   @Override
   public void onClick(View v) {
     if (v.getId() == R.id.btnNext) {
-      if(mImeUtils.getState() == steps.get(currentItem).getBtnAction()
+      if(mImeUtils.getState() == mSteps.get(mCurrentItemPos).getBtnAction()
               && mImeUtils.getState() != IMEUtils.STATE_READY)
         Toast.makeText(this, getString(R.string.setup_state_skipped), Toast.LENGTH_SHORT).show();
       changeFragment(true);
@@ -166,18 +168,18 @@ public class StepPagerActivity extends AppCompatActivity
   }
 
   private void changeFragment(int position) {
-    pager.setCurrentItem(position, true);
+    mPagerView.setCurrentItem(position, true);
   }
 
   private void changeFragment(boolean isNext) {
-    int item = currentItem;
+    int item = mCurrentItemPos;
     item = (isNext) ? item + 1 : item - 1;
 
-    if (item < 0 || item == steps.size()) {
+    if (item < 0 || item == mSteps.size()) {
       startActivity(new Intent(this, MainActivity.class));
       finish();
     }
-    else pager.setCurrentItem(item, true);
+    else mPagerView.setCurrentItem(item, true);
   }
 
   private void registerIMEChangeListener() {
@@ -189,7 +191,7 @@ public class StepPagerActivity extends AppCompatActivity
         int newState = mImeUtils.getState();
 
         if(oldState != newState) {
-          if(steps.get(currentItem).getBtnAction() == IMEUtils.STATE_NOT_DEFAULT) {
+          if(mSteps.get(mCurrentItemPos).getBtnAction() == IMEUtils.STATE_NOT_DEFAULT) {
             if(newState == IMEUtils.STATE_READY) changeFragment(true);
           }
         }

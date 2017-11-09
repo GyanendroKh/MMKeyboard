@@ -28,7 +28,7 @@ public class IMEUtils {
     checkState();
   }
 
-  public void checkState() {
+  private void checkState() {
     if(!isMMImeEnabled()) {
       mState = STATE_NOT_ENABLED;
     }else if(!isMMDefaultIME()) {

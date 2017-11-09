@@ -1,5 +1,6 @@
 package com.gyanendrokh.meiteimayek.keyboard.views;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.CardView;
@@ -22,7 +23,7 @@ public class HomeNotSetupView {
   }
 
   private void getCardViewFromXML() {
-    View v = mInflater.inflate(R.layout.home_not_setup, null);
+    @SuppressLint("InflateParams") View v = mInflater.inflate(R.layout.home_not_setup, null);
     mCardView = v.findViewById(R.id.card_not_setup);
     v.findViewById(R.id.setUpKey).setOnClickListener(new View.OnClickListener() {
       @Override
