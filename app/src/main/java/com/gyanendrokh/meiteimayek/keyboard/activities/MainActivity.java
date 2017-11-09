@@ -48,15 +48,16 @@ public class MainActivity extends AppCompatActivity
 
     mFragmentManager = getSupportFragmentManager();
 
-    renderFragment(HomeFragment.getInstance());
+    renderFragment(HomeFragment.getInstance(), getString(R.string.title_activity_main));
 
     getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
   }
 
-  private void renderFragment(Fragment fragment) {
+  private void renderFragment(Fragment fragment, String title) {
     Fragment curFragment = mFragmentManager.findFragmentById(FRAGMENT_CONTAINER);
 
     if(curFragment == fragment) return;
+    mToolbar.setTitle(title);
     mFragmentManager.beginTransaction().replace(FRAGMENT_CONTAINER, fragment).commit();
   }
 
@@ -64,6 +65,8 @@ public class MainActivity extends AppCompatActivity
   public void onBackPressed() {
     if (mDrawLayout.isDrawerOpen(GravityCompat.START)) {
       mDrawLayout.closeDrawer(GravityCompat.START);
+    } else if(mFragmentManager.findFragmentById(FRAGMENT_CONTAINER) != HomeFragment.getInstance()) {
+      renderFragment(HomeFragment.getInstance(), getString(R.string.title_activity_main));
     } else {
       super.onBackPressed();
     }
@@ -71,21 +74,22 @@ public class MainActivity extends AppCompatActivity
 
   @Override
   public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+    int id = item.getItemId();
 
-    switch(item.getItemId()) {
+    switch(id) {
       case R.id.sNav_home:
-        renderFragment(HomeFragment.getInstance());
+        renderFragment(HomeFragment.getInstance(), getString(R.string.title_activity_main));
         break;
       case R.id.sNav_aboutMe:
-        renderFragment(AboutMeFragment.getInstance());
+        renderFragment(AboutMeFragment.getInstance(), getString(R.string.title_about_me));
         break;
       case R.id.sNav_openSource:
-        renderFragment(OpenSourceFragment.getInstance());
+        renderFragment(OpenSourceFragment.getInstance(), getString(R.string.title_open_source));
         break;
     }
 
     mDrawLayout.closeDrawer(GravityCompat.START);
-    return true;
+    return !((id == R.id.sNav_settings) || (id == R.id.sNav_share));
   }
 
 }

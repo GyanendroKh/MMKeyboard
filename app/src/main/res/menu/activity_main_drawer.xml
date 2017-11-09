@@ -7,9 +7,11 @@
       android:icon="@drawable/ic_home"
       android:title="@string/sNav_home"/>
     <item
+      android:id="@+id/sNav_settings"
       android:icon="@drawable/ic_settings"
-        android:title="@string/sNav_settings"/>
+      android:title="@string/sNav_settings"/>
     <item
+      android:id="@+id/sNav_share"
       android:icon="@drawable/ic_menu_share"
       android:title="@string/sNav_share"/>
   </group>
