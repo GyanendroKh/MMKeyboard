@@ -18,14 +18,16 @@
 
   <item android:title="@string/sNav_about">
     <menu>
-      <item
-        android:id="@+id/sNav_openSource"
-        android:icon="@drawable/ic_developer_mode"
-        android:title="@string/sNav_openSource"/>
-      <item
-        android:id="@+id/sNav_aboutMe"
-        android:icon="@drawable/ic_account_box"
-        android:title="@string/sNav_aboutMe"/>
+      <group android:checkableBehavior="single">
+        <item
+          android:id="@+id/sNav_openSource"
+          android:icon="@drawable/ic_developer_mode"
+          android:title="@string/sNav_openSource"/>
+        <item
+          android:id="@+id/sNav_aboutMe"
+          android:icon="@drawable/ic_account_box"
+          android:title="@string/sNav_aboutMe"/>
+      </group>
     </menu>
   </item>
 
