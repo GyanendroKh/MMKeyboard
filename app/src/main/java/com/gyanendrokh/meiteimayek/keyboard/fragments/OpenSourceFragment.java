@@ -10,10 +10,14 @@ import android.widget.RelativeLayout;
 
 import com.gyanendrokh.meiteimayek.keyboard.R;
 import com.gyanendrokh.meiteimayek.keyboard.views.BottomDevelopBy;
+import com.gyanendrokh.meiteimayek.keyboard.commons.Commons;
 
 public class OpenSourceFragment extends Fragment {
 
+  private static final String GITHUB_LINK = "";
+
   private RelativeLayout mMainLayout;
+  private Commons mCommons;
 
   public static OpenSourceFragment getInstance() {
     return new OpenSourceFragment();
@@ -22,7 +26,17 @@ public class OpenSourceFragment extends Fragment {
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
     View view = inflater.inflate(R.layout.fragment_open_source, container, false);
+    
     mMainLayout = view.findViewById(R.id.os_mainView);
+    mCommons = new Commons(getActivity());
+
+    view.findViewById(R.id.os_github_btn).setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View view) {
+        mCommons.openUrl(Commons.GITHUB_LINK_FOR_KEYBOARD_PROJECT);
+      }
+    });
+    
     addBottomDevelopBy();
     return view;
   }
