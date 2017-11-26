@@ -65,11 +65,15 @@ public class MainActivity extends AppCompatActivity
   public void onBackPressed() {
     if (mDrawLayout.isDrawerOpen(GravityCompat.START)) {
       mDrawLayout.closeDrawer(GravityCompat.START);
-    } else if(mFragmentManager.findFragmentById(FRAGMENT_CONTAINER) != HomeFragment.getInstance()) {
-      renderFragment(HomeFragment.getInstance(), getString(R.string.title_activity_main));
-    } else {
-      super.onBackPressed();
+      return;
     }
+    if(mFragmentManager.findFragmentById(FRAGMENT_CONTAINER) 
+      != HomeFragment.getInstance()) {
+      onNavigationItemSelected(mNavView.getMenu().getItem(0));
+      mNavView.setCheckedItem(R.id.sNav_home);
+      return;
+    }
+    super.onBackPressed();
   }
 
   @Override
