@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1037923643338",
+    "firebase_url": "https://mmkeyboard-android.firebaseio.com",
+    "project_id": "mmkeyboard-android",
+    "storage_bucket": "mmkeyboard-android.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1037923643338:android:a44b8a1b68a1c770",
+        "android_client_info": {
+          "package_name": "com.gyanendrokh.meiteimayek.keyboard"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1037923643338-2j2t0cqf6ospl2aq4d193u2vobgrco4r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARlysFOZLGOA9i0XNPZErVsHZ8ODKl5oc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
